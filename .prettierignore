@@ -1,0 +1,12 @@
+.gitignore
+.prettierignore
+.eslintrc
+.prettierrc
+*.ico
+*.svg
+*.png
+yarn.lock
+package-lock.json
+documentation/*
+*.snap
+src/assets/*

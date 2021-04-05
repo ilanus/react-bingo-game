@@ -1,0 +1,48 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-optional-chaining"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": false
+          }
+        ]
+      ]
+    },
+    "staging": {
+      "plugins": [
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": false
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": false
+          }
+        ]
+      ]
+    }
+  }
+}

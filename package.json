@@ -1,0 +1,126 @@
+{
+  "name": "react-bingo-game",
+  "version": "0.0.1",
+  "description": "react-bingo-game",
+  "engines": {
+    "node": ">=10.16.0",
+    "npm": ">=6.9.0"
+  },
+  "jest": {
+    "verbose": true,
+    "coverageDirectory": "coverage-client",
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js",
+      "!<rootDir>/webpack.config.js",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/configureStore.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "setupFiles": [
+      "<rootDir>/src/test/__helpers__/globals.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/test/setupTests.js"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!lodash-es)"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testURL": "http://localhost:8081",
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/client/test/__mocks__/fileMocks.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^.{1,2}/style$": "identity-obj-proxy"
+    }
+  },
+  "scripts": {
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix",
+    "start": "webpack-dev-server --config webpack/webpack.dev.babel.js",
+    "build": "webpack --config webpack/webpack.prod.babel.js",
+    "start:prod": "node dist/server.js",
+    "test": "jest",
+    "test:updateSnapshot": "jest --updateSnapshot",
+    "test:watch": "jest --watch --no-cache",
+    "test:coverage": "npm run client:test:coverage",
+    "prettier": "prettier --write 'src/**/*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "axios-mock-adapter": "^1.10.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
+    "circular-dependency-plugin": "^5.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^3.1.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.1.0",
+    "dotenv": "^8.0.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.4.4",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "file-loader": "^4.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "json-server": "^0.16.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "2.2.1",
+    "react-test-renderer": "^16.6.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.23.1",
+    "webpack-ant-icon-loader": "^1.0.8",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "express": "^4.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-query": "^2.26.2",
+    "react-rewards": "^1.1.2",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "use-sound": "^2.0.1"
+  }
+}

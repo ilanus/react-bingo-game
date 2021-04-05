@@ -1,0 +1,81 @@
+@import '../../styles/mixins.less';
+@import '../../styles/colors.less';
+
+.row {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+
+  &.match {
+    .card {
+      &::after {
+        .bingo-chip();
+      }
+    }
+  }
+}
+
+.col {
+  display: block;
+  max-width: 20%;
+  flex: 0 0 20%;
+  outline: 0;
+  height: 100px;
+  padding: 0px;
+
+  .card {
+    padding: 2px;
+    border: 2px solid @cyan-color;
+    border-right: 0;
+    border-bottom: 0;
+    height: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    color: @label-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    outline: 0;
+
+    &.freeSpace {
+      cursor: not-allowed;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &.active {
+      text-decoration: line-through;
+    }
+
+    &.match {
+      &::after {
+        .bingo-chip();
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .col {
+    height: 125px;
+
+    .card {
+      font-size: 18px;
+      padding: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .col {
+    height: 150px;
+
+    .card {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb"
+  ],
+  "plugins": ["sonarjs", "react-hooks"],
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+   "globals": {
+    "ENVIRONMENT": true,
+    "AUTH_SERVICE_URL": true,
+    "EXTEND_ESLINT": true
+  },
+  "rules": {
+    "no-console": "error",
+    "no-shadow": 0,
+    "spaced-comment": 0,
+    "comma-dangle": 0,
+    "max-len": ["error", { "code": 140 }],
+    "padded-blocks": 0,
+    "arrow-parens": [2, "as-needed", { "requireForBlockBody": false }],
+    "keyword-spacing": 0,
+    "space-before-blocks": 0,
+    "arrow-body-style": 0,
+    "operator-linebreak": ["error", "after"],
+    "object-curly-newline": 0,
+    "consistent-return": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "react/no-array-index-key": 0,
+    "react/require-default-props": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": 0,
+    "sonarjs/cognitive-complexity": 0,
+    "import/order": 0,
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": "webpack/webpack.dev.babel.js"
+      }
+    }
+  }
+}

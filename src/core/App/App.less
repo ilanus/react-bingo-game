@@ -1,0 +1,45 @@
+@import '../../styles/colors.less';
+
+@font-face {
+  font-family: HomemadeApple;
+  src: url('../../assets/fonts/HomemadeApple.ttf');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: @text-color;
+  background-color: @background-color;
+  font-weight: 400;
+  font-family: 'Didact Gothic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.appContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+:global(.absolute-player) {
+  width: 100% !important;
+  height: 100% !important;
+  left: 50%;
+  top: 50%;
+  right: 0;
+  position: fixed;
+  bottom: 0;
+  transform: translate(-50%, -50%) !important;
+}
