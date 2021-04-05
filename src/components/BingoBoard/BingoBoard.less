@@ -9,4 +9,31 @@
   border-right: 2px solid @cyan-color;
   border-bottom: 2px solid @cyan-color;
   margin-bottom: 32px;
+  margin-top: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+
+  .score {
+    font-size: 24px;
+  }
+
+  .reset {
+    padding: 8px;
+    background-color: @background-color;
+    color: @label-color;
+    outline: 0;
+    border: 1px solid @label-color;
+    cursor: pointer; 
+    transition: all 0.2s;
+    z-index: 1;
+
+    &:hover {
+      background-color: @cyan-color;
+      color: @background-color;
+      border-color: @background-color;
+    }
+  }  
 }

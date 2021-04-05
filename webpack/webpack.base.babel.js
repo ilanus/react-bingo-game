@@ -66,23 +66,6 @@ module.exports = options => ({
         ]
       },
       {
-        test: /node_modules.+\.less$/, // this is needed for ant-design babel-import
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-          },
-          {
-            loader: 'less-loader', // compiles Less to CSS
-            options: {
-              javascriptEnabled: true
-            }
-          }
-        ]
-      },
-      {
         test: /\.less$/, // this allows us to use css modules as well
         exclude: /node_modules/,
         use: [
@@ -94,7 +77,6 @@ module.exports = options => ({
             options: {
               modules: { localIdentName: 'org-structure_[local]_[hash:base64:6]' },
               importLoaders: 1,
-              sourceMap: options.mode === 'development'
             }
           },
           {

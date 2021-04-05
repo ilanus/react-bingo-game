@@ -9,7 +9,8 @@ import {
   getWinningDiagDownCols,
   getWinningDiagUpCols,
 } from 'utils/bingoBoard';
-import { BingoCard } from 'components';
+import { getGreeting } from 'utils/greeting';
+import BingoCard from 'components/BingoCard';
 
 import bingoSfx from 'assets/sounds/bingo.mp3';
 
@@ -29,6 +30,15 @@ const BingoBoard = () => {
 
   const rowCount = board.length;
   const colCount = board[0].length;
+
+  const handleReset = useCallback(() => {
+    setBoard(makeBingoBoard());
+    setSelectedCells([]);
+    setRowsWon([]);
+    setColsWon([]);
+    setDiagDownWon([]);
+    setDiagUpWon([]);
+  }, []);
 
   const handleCellClick = useCallback(
     (rowIndex, cellIndex) => {
@@ -147,8 +157,22 @@ const BingoBoard = () => {
     [board, colsWon, diagDownWon, diagUpWon, handleCellClick],
   );
 
+  const greeting = getGreeting();
+
   return (
     <div>
+      <div className={styles.actions}>
+        <div className={styles.score}>
+          {greeting}
+        </div>
+        <button
+          type="button"
+          className={styles.reset}
+          onClick={handleReset}
+        >
+          Reset Game
+        </button>
+      </div>
       <Reward
         ref={rewardRef}
         type="memphis"
