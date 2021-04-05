@@ -5,7 +5,7 @@ export const getGreeting = () => {
   const greetings = [
     {
       tod: 'latenight',
-      greet: 'Wow! You`re still awake. Working Late?',
+      greet: 'You`re still awake?',
       test: hours >= 24 || hours <= 4,
     },
     { tod: 'night', greet: 'Good Night!', test: hours >= 21 || hours <= 11 },
@@ -14,7 +14,7 @@ export const getGreeting = () => {
     { tod: 'noon', greet: 'Good Noon Visitor!', test: hours === 12 },
     {
       tod: 'morning',
-      greet: 'Good Morning! Have a nice day.',
+      greet: 'Good Morning!',
       test: hours >= 5 && hours <= 11,
     },
   ];

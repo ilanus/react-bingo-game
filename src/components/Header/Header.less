@@ -1,23 +1,31 @@
 @import '../../styles/colors.less';
 
 .header {
-  margin-bottom: 24px;
+  margin-bottom: 0px;
 
   .slogan {
     font-size: 32px;
     margin: 0;
     display: flex;
     justify-content: center;
-    margin-bottom: 32px;
-    margin-top: 32px;
+    margin-bottom: 24px;
+    margin-top: 24px;
     color: @cyan-color;
     font-family: HomemadeApple;
   }
   
   .title {
-    font-size: 48px;
+    font-size: 40px;
     text-align: center;
     color: @label-color;
     font-weight: normal;
   }  
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    .title {
+      font-size: 48px;
+    }
+  }
 }
