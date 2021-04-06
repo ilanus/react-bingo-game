@@ -2,6 +2,10 @@
 
 This is a 1-25 Bingo game built with React
 
+### Online Demo
+
+https://react-bingo-game.vercel.app/
+
 ## Development
 
 ### Prerequisites
