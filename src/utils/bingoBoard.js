@@ -1,4 +1,5 @@
 import { phrases } from 'constants/phrases';
+import { shuffle } from './shuffle';
 
 /**
  * @param {number} size
@@ -8,9 +9,10 @@ export const makeBingoBoard = (size = 5) => {
   let id = 0;
   const midPoint = 12;
   const result = [];
+  const shuffledPhrases = shuffle(phrases);
 
-  for (let i = 0; i < phrases.length; i += size) {
-    const data = phrases.slice(i, i + size);
+  for (let i = 0; i < shuffledPhrases.length; i += size) {
+    const data = shuffledPhrases.slice(i, i + size);
     const arr = [];
 
     for (let j = 0; j < data.length; j += 1) {
